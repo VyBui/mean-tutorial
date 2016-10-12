@@ -22,13 +22,18 @@
       "uirouter": true,
       "bootstrap": true,
       "uibootstrap": true,
+      "socketio": true,
+      "auth": true,
       "models": true,
       "mongooseModels": true,
       "mongoose": true,
-      "jasmine": true,
-      "mocha": false,
+      "oauth": true,
+      "googleAuth": true,
+      "facebookAuth": true,
+      "mocha": true,
+      "jasmine": false,
       "should": false,
-      "expect": false
+      "expect": true
     }
   },
   "generator-ng-component": {
@@ -42,7 +47,8 @@
     "modulePrompt": true,
     "filters": [
       "uirouter",
-      "jasmine",
+      "mocha",
+      "expect",
       "uirouter",
       "es6",
       "webpack"

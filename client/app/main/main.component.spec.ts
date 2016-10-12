@@ -6,7 +6,7 @@ import {MainController} from './main.component';
 describe('Component: MainComponent', function() {
 
   beforeEach(angular.mock.module(main));
-  beforeEach(angular.mock.module('stateMock'));
+  beforeEach(angular.mock.module('stateMock'));  beforeEach(angular.mock.module('socketMock'));
 
   var scope;
   var mainComponent;
@@ -19,7 +19,8 @@ describe('Component: MainComponent', function() {
     $http,
     $componentController,
     $rootScope,
-    $state) {
+    $state,
+    socket) {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('/api/things')
         .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
@@ -28,13 +29,14 @@ describe('Component: MainComponent', function() {
       state = $state;
       mainComponent = $componentController('main', {
         $http: $http,
-        $scope: scope
+        $scope: scope,
+        socket: socket
       });
   }));
 
   it('should attach a list of things to the controller', function() {
     mainComponent.$onInit();
     $httpBackend.flush();
-    expect(mainComponent.awesomeThings.length).toBe(4);
+    expect(mainComponent.awesomeThings.length).to.equal(4);
   });
 });
