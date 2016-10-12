@@ -19,7 +19,7 @@ import account from './account';
 import admin from './admin';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
-import main from './main/main.component';
+import games from './games/games.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
@@ -41,7 +41,7 @@ angular.module('meanTutorialApp', [
   account,
   admin,  navbar,
   footer,
-  main,
+  games,
   constants,
   socket,
   util

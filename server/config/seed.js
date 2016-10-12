@@ -8,27 +8,27 @@ import Game from '../api/game/game.model';
 import User from '../api/user/user.model';
 
 Game.find({}).remove(function() {
-  Game.create({
-    name : 'Halo 5',
-    platform : 'Xbox One',
-    genre: 'Shooter'
-  },{
-    name : 'Fallout 4',
-    platform : 'PlayStation 4',
-    genre: 'Role-Playing'
-  },{
-    name : 'Super Smash Bros.',
-    platform : 'Wii U',
-    genre: 'Fighting'
-  },{
-    name : 'Pokemon X',
-    platform : '3DS',
-    genre: 'Role-Playing'
-  },{
-    name : 'Halo 4',
-    platform : 'Xbox 360',
-    genre: 'Shooter'
-  });
+  // Game.create({
+  //   name : 'Halo 5',
+  //   platform : 'Xbox One',
+  //   genre: 'Shooter'
+  // },{
+  //   name : 'Fallout 4',
+  //   platform : 'PlayStation 4',
+  //   genre: 'Role-Playing'
+  // },{
+  //   name : 'Super Smash Bros.',
+  //   platform : 'Wii U',
+  //   genre: 'Fighting'
+  // },{
+  //   name : 'Pokemon X',
+  //   platform : '3DS',
+  //   genre: 'Role-Playing'
+  // },{
+  //   name : 'Halo 4',
+  //   platform : 'Xbox 360',
+  //   genre: 'Shooter'
+  // });
 });
 
 User.find({}).remove(function() {

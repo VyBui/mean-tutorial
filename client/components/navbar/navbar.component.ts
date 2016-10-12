@@ -4,8 +4,7 @@ const angular = require('angular');
 
 export class NavbarComponent {
   menu = [{
-    'title': 'Home',
-    'state': 'main'
+    'state': 'game'
   }];
   isLoggedIn: Function;
   isAdmin: Function;
