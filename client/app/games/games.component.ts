@@ -8,7 +8,9 @@ export class GamesController {
   $http;
   socket;
   games = [];
+  originalGames = [];
   newGame = {};
+  filter = "none";
 
   /*@ngInject*/
   constructor($http, $scope, socket) {
@@ -23,6 +25,7 @@ export class GamesController {
   $onInit() {
     this.$http.get('/api/games').then(response => {
       this.games = response.data;
+      this.originalGames = response.data;
       this.socket.syncUpdates('games', this.games);
     });
   }
@@ -46,6 +49,28 @@ export class GamesController {
 
   saveGame = function(game){
       this.$http.put('/api/games/' + this.games[game]._id, this.games[game]);
+      this.games[game].edit = false;
+  };
+
+  resetGames = function(){
+      this.games = this.originalGames;
+      this.filter = 'none';
+  }
+
+  filterByGenre = function(genre){
+      this.resetGames();
+      this.games = this.games.filter(function(game){
+        return game.genre === genre;
+      });
+      this.filter = 'Genre: ' + genre;
+  };
+
+  filterByPlatform = function(platform){
+      this.resetGames();
+      this.games = this.games.filter(function(game){
+        return game.platform === platform;
+      });
+      this.filter = 'Platform: ' + platform;
   };
 }
 
