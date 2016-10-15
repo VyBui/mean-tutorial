@@ -19,6 +19,7 @@ import account from './account';
 import admin from './admin';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
+import main from './main/main.component';
 import games from './games/games.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
@@ -31,16 +32,15 @@ angular.module('meanTutorialApp', [
   ngCookies,
   ngResource,
   ngSanitize,
-
   'btford.socket-io',
-
   uiRouter,
   uiBootstrap,
-
   _Auth,
   account,
-  admin,  navbar,
+  admin,
+  navbar,
   footer,
+  main,
   games,
   constants,
   socket,
